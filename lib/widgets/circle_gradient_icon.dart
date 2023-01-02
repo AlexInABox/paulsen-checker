@@ -17,25 +17,27 @@ class CircleGradientIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        width: size ?? 70,
-        height: size ?? 70,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-                color: color.withOpacity(0.4),
-                blurRadius: 5,
-                offset: const Offset(2, 2))
-          ],
-          gradient: AppColors.getLinearGradient(color),
-        ),
-        child: Icon(
-          icon,
-          color: Colors.white,
-          size: iconSize ?? 32,
+    return Material(
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          width: size ?? 70,
+          height: size ?? 70,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                  color: color.withOpacity(0.4),
+                  blurRadius: 5,
+                  offset: const Offset(2, 2))
+            ],
+            gradient: AppColors.getLinearGradient(color),
+          ),
+          child: Icon(
+            icon,
+            color: Colors.white,
+            size: iconSize ?? 32,
+          ),
         ),
       ),
     );

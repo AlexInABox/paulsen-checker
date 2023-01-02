@@ -9,6 +9,26 @@ import 'package:intl/intl.dart'; //for time
 
 bool premium = false;
 
+openHome(context) {
+  Navigator.pushNamed(context, Routes.home);
+}
+
+openSubstitution(context) {
+  Navigator.pushNamed(context, Routes.substitution);
+}
+
+openMensaPage(context) {
+  Navigator.pushNamed(context, Routes.mensa);
+}
+
+openExams(context) {
+  Navigator.pushNamed(context, Routes.exams);
+}
+
+openHomework(context) {
+  Navigator.pushNamed(context, Routes.homework);
+}
+
 getDate() {
   var now = DateTime.now();
   var formatter = DateFormat('EEEE, dd MMMM yyyy');
@@ -69,24 +89,27 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: CircleGradientIcon(
-              onTap: () {
-                Navigator.pushNamed(context, Routes.todaysTask);
-              },
-              icon: Icons.account_circle_outlined,
-              color: Colors.lightBlue,
-              iconSize: 24,
-              size: 40,
+            child: Hero(
+              tag: "profile",
+              child: CircleGradientIcon(
+                onTap: () {
+                  Navigator.pushNamed(context, Routes.todaysTask);
+                },
+                icon: Icons.account_circle_outlined,
+                color: Colors.lightBlue,
+                iconSize: 24,
+                size: 40,
+              ),
             ),
           )
         ],
       ),
       extendBody: true,
-      body: _buildBody(),
+      body: _buildBody(context),
     );
   }
 
-  Stack _buildBody() {
+  Stack _buildBody(context) {
     return Stack(
       children: [
         SingleChildScrollView(
@@ -105,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 const SizedBox(
                   height: 15,
                 ),
-                buildGrid(),
+                buildGrid(context),
                 const SizedBox(
                   height: 25,
                 ),
@@ -182,16 +205,19 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  StaggeredGrid buildGrid() {
+  StaggeredGrid buildGrid(context) {
     return StaggeredGrid.count(
       crossAxisCount: 2,
       mainAxisSpacing: 15,
       crossAxisSpacing: 15,
-      children: const [
+      children: [
         StaggeredGridTile.count(
           crossAxisCellCount: 1,
           mainAxisCellCount: 1,
           child: TaskGroupContainer(
+            onTap: () {
+              Navigator.pushNamed(context, Routes.substitution);
+            },
             color: Colors.indigo,
             icon: Icons.free_cancellation_rounded,
             taskCount: 0,

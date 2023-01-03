@@ -25,7 +25,7 @@ class TaskGroupContainer extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(15),
+        padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: color[400],
           boxShadow: [
@@ -43,40 +43,13 @@ class TaskGroupContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
-              height: 5,
-            ),
             Align(
-              alignment: isSmall! ? Alignment.centerLeft : Alignment.center,
+              alignment: Alignment.center,
               child: Icon(
                 icon,
-                size: isSmall! ? 60 : 80,
+                size: isSmall! ? 60 : 60,
                 color: Colors.white,
               ),
-            ),
-            const Spacer(),
-            Text(
-              taskGroup,
-              maxLines: 2,
-              overflow: TextOverflow.fade,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              "$taskCount Task",
-              style: TextStyle(
-                color: Colors.white.withOpacity(0.7),
-                fontSize: 12,
-              ),
-            ),
-            const SizedBox(
-              height: 5,
             ),
           ],
         ),

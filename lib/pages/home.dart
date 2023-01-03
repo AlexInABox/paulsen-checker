@@ -207,53 +207,74 @@ class _HomeScreenState extends State<HomeScreen> {
 
   StaggeredGrid buildGrid(context) {
     return StaggeredGrid.count(
-      crossAxisCount: 2,
+      crossAxisCount: 4,
       mainAxisSpacing: 15,
       crossAxisSpacing: 15,
       children: [
-        StaggeredGridTile.count(
-          crossAxisCellCount: 1,
-          mainAxisCellCount: 1,
-          child: TaskGroupContainer(
-            onTap: () {
-              Navigator.pushNamed(context, Routes.substitution);
-            },
-            color: Colors.indigo,
-            icon: Icons.free_cancellation_rounded,
-            taskCount: 0,
-            taskGroup: "Vertretungsplan",
+        Hero(
+          tag: "substitutionButton",
+          child: StaggeredGridTile.count(
+            crossAxisCellCount: 1,
+            mainAxisCellCount: 1,
+            child: TaskGroupContainer(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.substitution);
+              },
+              color: Colors.indigo,
+              icon: Icons.free_cancellation_rounded,
+              taskCount: 0,
+              taskGroup: "Vertretungsplan",
+            ),
           ),
         ),
-        StaggeredGridTile.count(
-          crossAxisCellCount: 1,
-          mainAxisCellCount: 1,
-          child: TaskGroupContainer(
-            color: Colors.orange,
-            isSmall: false,
-            icon: Icons.book_rounded,
-            taskCount: 5,
-            taskGroup: "Hausaufgaben",
+        Hero(
+          tag: "homeworkButton",
+          child: StaggeredGridTile.count(
+            crossAxisCellCount: 1,
+            mainAxisCellCount: 1,
+            child: TaskGroupContainer(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.homework);
+              },
+              color: Colors.orange,
+              isSmall: false,
+              icon: Icons.book_rounded,
+              taskCount: 5,
+              taskGroup: "Hausaufgaben",
+            ),
           ),
         ),
-        StaggeredGridTile.count(
-          crossAxisCellCount: 1,
-          mainAxisCellCount: 1,
-          child: TaskGroupContainer(
-            color: Colors.lightGreen,
-            icon: Icons.food_bank_rounded,
-            taskCount: 0,
-            taskGroup: "Mensa",
+        Hero(
+          tag: "mensaButton",
+          child: StaggeredGridTile.count(
+            crossAxisCellCount: 1,
+            mainAxisCellCount: 1,
+            child: TaskGroupContainer(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.mensa);
+              },
+              color: Colors.lightGreen,
+              icon: Icons.food_bank_rounded,
+              taskCount: 0,
+              taskGroup: "Mensa",
+            ),
           ),
         ),
-        StaggeredGridTile.count(
-          crossAxisCellCount: 1,
-          mainAxisCellCount: 1,
-          child: TaskGroupContainer(
-            color: Colors.blue,
-            isSmall: false,
-            icon: Icons.calendar_month_rounded,
-            taskCount: 9,
-            taskGroup: "Klausuren",
+        Hero(
+          tag: "examsButton",
+          child: StaggeredGridTile.count(
+            crossAxisCellCount: 1,
+            mainAxisCellCount: 1,
+            child: TaskGroupContainer(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.exams);
+              },
+              color: Colors.blue,
+              isSmall: false,
+              icon: Icons.calendar_month_rounded,
+              taskCount: 9,
+              taskGroup: "Klausuren",
+            ),
           ),
         ),
       ],

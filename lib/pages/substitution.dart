@@ -33,15 +33,17 @@ class _SubstitutionScreenState extends State<SubstitutionScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Hero(
-              tag: "profile",
-              child: CircleGradientIcon(
-                onTap: () {
-                  Navigator.pushNamed(context, Routes.todaysTask);
-                },
-                icon: Icons.account_circle_outlined,
-                color: Colors.lightBlue,
-                iconSize: 24,
-                size: 40,
+              tag: "substitutionButton",
+              child: StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1,
+                child: TaskGroupContainer(
+                  onTap: () {},
+                  color: Colors.indigo,
+                  icon: Icons.free_cancellation_rounded,
+                  taskCount: 0,
+                  taskGroup: "Vertretungsplan",
+                ),
               ),
             ),
           ),

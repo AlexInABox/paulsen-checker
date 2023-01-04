@@ -31,19 +31,16 @@ class _SubstitutionScreenState extends State<SubstitutionScreen> {
         elevation: 0,
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             child: Hero(
               tag: "substitutionButton",
-              child: StaggeredGridTile.count(
-                crossAxisCellCount: 1,
-                mainAxisCellCount: 1,
-                child: TaskGroupContainer(
-                  onTap: () {},
-                  color: Colors.indigo,
-                  icon: Icons.free_cancellation_rounded,
-                  taskCount: 0,
-                  taskGroup: "Vertretungsplan",
-                ),
+              child: TaskGroupContainer(
+                onTap: () {},
+                isSmall: true,
+                color: Colors.indigo,
+                icon: Icons.free_cancellation_rounded,
+                taskCount: 0,
+                taskGroup: "Vertretungsplan",
               ),
             ),
           ),

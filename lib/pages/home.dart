@@ -77,6 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //backgroundColor: Color.fromRGBO(48, 49, 53, 1),
       appBar: AppBar(
         title: Text(
           getDate(),
@@ -138,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 buildList(),
                 const SizedBox(
-                  height: 40,
+                  height: 30,
                 ),
               ],
             ),
@@ -211,11 +212,11 @@ class _HomeScreenState extends State<HomeScreen> {
       mainAxisSpacing: 15,
       crossAxisSpacing: 15,
       children: [
-        Hero(
-          tag: "substitutionButton",
-          child: StaggeredGridTile.count(
-            crossAxisCellCount: 1,
-            mainAxisCellCount: 1,
+        StaggeredGridTile.count(
+          crossAxisCellCount: 1,
+          mainAxisCellCount: 1,
+          child: Hero(
+            tag: "substitutionButton",
             child: TaskGroupContainer(
               onTap: () {
                 Navigator.pushNamed(context, Routes.substitution);
@@ -227,54 +228,45 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
         ),
-        Hero(
-          tag: "homeworkButton",
-          child: StaggeredGridTile.count(
-            crossAxisCellCount: 1,
-            mainAxisCellCount: 1,
-            child: TaskGroupContainer(
-              onTap: () {
-                Navigator.pushNamed(context, Routes.homework);
-              },
-              color: Colors.orange,
-              isSmall: false,
-              icon: Icons.book_rounded,
-              taskCount: 5,
-              taskGroup: "Hausaufgaben",
-            ),
+        StaggeredGridTile.count(
+          crossAxisCellCount: 1,
+          mainAxisCellCount: 1,
+          child: TaskGroupContainer(
+            onTap: () {
+              Navigator.pushNamed(context, Routes.homework);
+            },
+            color: Colors.orange,
+            isSmall: false,
+            icon: Icons.book_rounded,
+            taskCount: 5,
+            taskGroup: "Hausaufgaben",
           ),
         ),
-        Hero(
-          tag: "mensaButton",
-          child: StaggeredGridTile.count(
-            crossAxisCellCount: 1,
-            mainAxisCellCount: 1,
-            child: TaskGroupContainer(
-              onTap: () {
-                Navigator.pushNamed(context, Routes.mensa);
-              },
-              color: Colors.lightGreen,
-              icon: Icons.food_bank_rounded,
-              taskCount: 0,
-              taskGroup: "Mensa",
-            ),
+        StaggeredGridTile.count(
+          crossAxisCellCount: 1,
+          mainAxisCellCount: 1,
+          child: TaskGroupContainer(
+            onTap: () {
+              Navigator.pushNamed(context, Routes.mensa);
+            },
+            color: Colors.lightGreen,
+            icon: Icons.food_bank_rounded,
+            taskCount: 0,
+            taskGroup: "Mensa",
           ),
         ),
-        Hero(
-          tag: "examsButton",
-          child: StaggeredGridTile.count(
-            crossAxisCellCount: 1,
-            mainAxisCellCount: 1,
-            child: TaskGroupContainer(
-              onTap: () {
-                Navigator.pushNamed(context, Routes.exams);
-              },
-              color: Colors.blue,
-              isSmall: false,
-              icon: Icons.calendar_month_rounded,
-              taskCount: 9,
-              taskGroup: "Klausuren",
-            ),
+        StaggeredGridTile.count(
+          crossAxisCellCount: 1,
+          mainAxisCellCount: 1,
+          child: TaskGroupContainer(
+            onTap: () {
+              Navigator.pushNamed(context, Routes.exams);
+            },
+            color: Colors.blue,
+            isSmall: false,
+            icon: Icons.calendar_month_rounded,
+            taskCount: 9,
+            taskGroup: "Klausuren",
           ),
         ),
       ],
@@ -283,8 +275,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   SingleChildScrollView buildList() {
     return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -311,7 +302,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //width: 60.w,
               //height: 30.w,
               child: SizedBox(
-                width: 60.w,
+                width: 100.w,
                 height: 20.w,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -337,7 +328,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const SizedBox(
-            width: 30,
+            height: 20,
           ),
           InkWell(
             onTap: () {},
@@ -362,7 +353,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //width: 60.w,
               //height: 30.w,
               child: SizedBox(
-                width: 60.w,
+                width: 100.w,
                 height: 20.w,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -388,7 +379,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const SizedBox(
-            width: 30,
+            height: 20,
           ),
           InkWell(
             onTap: () {},
@@ -413,7 +404,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //width: 60.w,
               //height: 30.w,
               child: SizedBox(
-                width: 60.w,
+                width: 100.w,
                 height: 20.w,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -439,7 +430,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const SizedBox(
-            width: 30,
+            height: 20,
           ),
           InkWell(
             onTap: () {},
@@ -464,7 +455,7 @@ class _HomeScreenState extends State<HomeScreen> {
               //width: 60.w,
               //height: 30.w,
               child: SizedBox(
-                width: 60.w,
+                width: 100.w,
                 height: 20.w,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -490,11 +481,11 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           const SizedBox(
-            width: 30,
+            height: 0,
           ),
           //Duplicate the SizedBoxs here
           SizedBox(
-            height: 40.w,
+            height: 0.w,
             child: Column(),
           ),
         ],

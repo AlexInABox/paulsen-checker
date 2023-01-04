@@ -26,7 +26,8 @@ class TaskGroupContainer extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Container(
-          padding: const EdgeInsets.all(10),
+          padding:
+              const EdgeInsets.only(left: 10, right: 10, top: 0, bottom: 0),
           decoration: BoxDecoration(
             color: color[400],
             boxShadow: [
@@ -40,37 +41,44 @@ class TaskGroupContainer extends StatelessWidget {
             gradient: AppColors.getDarkLinearGradient(color),
             borderRadius: BorderRadius.circular(20),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Align(
-                alignment: Alignment.center,
-                child: Icon(
-                  icon,
-                  size: isSmall! ? 16 : 60,
-                  color: Colors.white,
-                ),
+          child: SizedBox(
+            height: isSmall! ? 200 : 0,
+            width: isSmall! ? 100 : 0,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Row(
+                mainAxisAlignment: isSmall!
+                    ? MainAxisAlignment.start
+                    : MainAxisAlignment.center,
+                crossAxisAlignment: isSmall!
+                    ? CrossAxisAlignment.center
+                    : CrossAxisAlignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Icon(
+                      icon,
+                      size: isSmall! ? 50 : 60,
+                      color: Colors.white,
+                    ),
+                  ),
+                  FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: isSmall!
+                        ? Text(
+                            " " + taskGroup,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontFamily: 'System',
+                              fontSize: 25,
+                              fontWeight: FontWeight.normal,
+                            ),
+                          )
+                        : null,
+                  ),
+                ],
               ),
-              SizedBox(
-                height: isSmall! ? 200 : 0,
-                width: isSmall! ? 100 : 0,
-                child: isSmall!
-                    ? FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Text(
-                          taskGroup,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontFamily: 'System',
-                            fontSize: 15,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                      )
-                    : null,
-              ),
-            ],
+            ),
           ),
         ),
       ),

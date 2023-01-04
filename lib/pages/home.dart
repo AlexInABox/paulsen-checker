@@ -181,21 +181,17 @@ class _HomeScreenState extends State<HomeScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SelectableText(
+        Text(
           "PaulsenPlaner" + getPremiumStatus(),
           style: TextStyle(
             color: Colors.blueGrey[900],
             fontWeight: FontWeight.w700,
             fontSize: 24,
           ),
-          toolbarOptions: const ToolbarOptions(
-            copy: true,
-            selectAll: true,
-          ),
         ),
         IconButton(
             onPressed: () {
-              setPremiumStatus(true);
+              setPremiumStatus(!premium);
               setState(() {}); //refresh
             },
             icon: Icon(

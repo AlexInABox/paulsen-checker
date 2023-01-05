@@ -227,42 +227,51 @@ class _HomeScreenState extends State<HomeScreen> {
         StaggeredGridTile.count(
           crossAxisCellCount: 1,
           mainAxisCellCount: 1,
-          child: TaskGroupContainer(
-            onTap: () {
-              Navigator.pushNamed(context, Routes.homework);
-            },
-            color: Colors.orange,
-            isSmall: false,
-            icon: Icons.book_rounded,
-            taskCount: 5,
-            taskGroup: "Hausaufgaben",
+          child: Hero(
+            tag: "homeworkButton",
+            child: TaskGroupContainer(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.homework);
+              },
+              color: Colors.orange,
+              isSmall: false,
+              icon: Icons.book_rounded,
+              taskCount: 5,
+              taskGroup: "Hausaufgaben",
+            ),
           ),
         ),
         StaggeredGridTile.count(
           crossAxisCellCount: 1,
           mainAxisCellCount: 1,
-          child: TaskGroupContainer(
-            onTap: () {
-              Navigator.pushNamed(context, Routes.mensa);
-            },
-            color: Colors.lightGreen,
-            icon: Icons.food_bank_rounded,
-            taskCount: 0,
-            taskGroup: "Mensa",
+          child: Hero(
+            tag: "mensaButton",
+            child: TaskGroupContainer(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.mensa);
+              },
+              color: Colors.lightGreen,
+              icon: Icons.food_bank_rounded,
+              taskCount: 0,
+              taskGroup: "Mensa",
+            ),
           ),
         ),
         StaggeredGridTile.count(
           crossAxisCellCount: 1,
           mainAxisCellCount: 1,
-          child: TaskGroupContainer(
-            onTap: () {
-              Navigator.pushNamed(context, Routes.exams);
-            },
-            color: Colors.blue,
-            isSmall: false,
-            icon: Icons.calendar_month_rounded,
-            taskCount: 9,
-            taskGroup: "Klausuren",
+          child: Hero(
+            tag: "examsButton",
+            child: TaskGroupContainer(
+              onTap: () {
+                Navigator.pushNamed(context, Routes.exams);
+              },
+              color: Colors.blue,
+              isSmall: false,
+              icon: Icons.calendar_month_rounded,
+              taskCount: 9,
+              taskGroup: "Klausuren",
+            ),
           ),
         ),
       ],
@@ -300,25 +309,36 @@ class _HomeScreenState extends State<HomeScreen> {
               child: SizedBox(
                 width: 100.w,
                 height: 20.w,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //Background color
-                    Text(
-                      "Aufgaben für heute: \n" + getNextTask(),
-                      style: TextStyle(
-                        color: Colors.blueGrey[700],
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                child: FittedBox(
+                  alignment: Alignment.topCenter,
+                  fit: BoxFit.scaleDown,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Fällige Aufgaben: ",
+                        style: TextStyle(
+                          color: Colors.blueGrey[700],
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 3,
                       ),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 3,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        getNextTask(),
+                        style: TextStyle(
+                          color: Colors.blueGrey[700],
+                          fontWeight: FontWeight.normal,
+                          fontSize: 17,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -351,25 +371,36 @@ class _HomeScreenState extends State<HomeScreen> {
               child: SizedBox(
                 width: 100.w,
                 height: 20.w,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //Background color
-                    Text(
-                      "Deine nächsten Klausuren: \n" + getNextExam(),
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 237, 241, 243),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                child: FittedBox(
+                  alignment: Alignment.topCenter,
+                  fit: BoxFit.scaleDown,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Die nächsten Klausuren: ",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 237, 241, 243),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 3,
                       ),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 3,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        getNextExam(),
+                        style: const TextStyle(
+                          color: Color.fromARGB(255, 237, 241, 243),
+                          fontWeight: FontWeight.normal,
+                          fontSize: 17,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -402,25 +433,36 @@ class _HomeScreenState extends State<HomeScreen> {
               child: SizedBox(
                 width: 100.w,
                 height: 20.w,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //Background color
-                    Text(
-                      "Ausfall morgen: \n" + getNextSubstitution(),
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 237, 241, 243),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                child: FittedBox(
+                  alignment: Alignment.topCenter,
+                  fit: BoxFit.scaleDown,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Ausfall heute: ",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 237, 241, 243),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 3,
                       ),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 3,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        getNextSubstitution(),
+                        style: const TextStyle(
+                          color: Color.fromARGB(255, 237, 241, 243),
+                          fontWeight: FontWeight.normal,
+                          fontSize: 17,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -453,25 +495,36 @@ class _HomeScreenState extends State<HomeScreen> {
               child: SizedBox(
                 width: 100.w,
                 height: 20.w,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //Background color
-                    Text(
-                      "Das gibts in der Mensa: \n" + getNextMeal(),
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 237, 241, 243),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
+                child: FittedBox(
+                  alignment: Alignment.topCenter,
+                  fit: BoxFit.scaleDown,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        "Essen heute: ",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 237, 241, 243),
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 3,
                       ),
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 3,
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                  ],
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        getNextMeal(),
+                        style: const TextStyle(
+                          color: Color.fromARGB(255, 237, 241, 243),
+                          fontWeight: FontWeight.normal,
+                          fontSize: 17,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),

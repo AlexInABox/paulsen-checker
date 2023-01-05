@@ -28,17 +28,19 @@ class _HomeworkScreenState extends State<HomeworkScreen> {
         elevation: 0,
         actions: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: CircleGradientIcon(
-              onTap: () {
-                Navigator.pushNamed(context, Routes.todaysTask);
-              },
-              icon: Icons.account_circle_outlined,
-              color: Colors.lightBlue,
-              iconSize: 24,
-              size: 40,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            child: Hero(
+              tag: "homeworkButton",
+              child: TaskGroupContainer(
+                onTap: () {},
+                color: Colors.orange,
+                isSmall: true,
+                icon: Icons.book_rounded,
+                taskCount: 0,
+                taskGroup: "Hausaufgaben",
+              ),
             ),
-          )
+          ),
         ],
       ),
       extendBody: true,

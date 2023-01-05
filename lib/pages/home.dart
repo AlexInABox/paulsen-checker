@@ -29,10 +29,25 @@ openHomework(context) {
   Navigator.pushNamed(context, Routes.homework);
 }
 
-getDate() {
+getDate(compact) {
   var now = DateTime.now();
+  if (compact) {
+    var formatter = DateFormat('dd.MM.yyyy');
+    return formatter.format(now);
+  }
   var formatter = DateFormat('EEEE, dd MMMM yyyy');
   return formatter.format(now);
+}
+
+getDateTomorrow(compact) {
+  var now = DateTime.now();
+  var tomorrow = now.add(const Duration(days: 1));
+  if (compact) {
+    var formatter = DateFormat('dd.MM.yyyy');
+    return formatter.format(tomorrow);
+  }
+  var formatter = DateFormat('EEEE, dd MMMM yyyy');
+  return formatter.format(tomorrow);
 }
 
 getPremiumStatus() {
@@ -80,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
       //backgroundColor: Color.fromRGBO(48, 49, 53, 1),
       appBar: AppBar(
         title: Text(
-          getDate(),
+          getDate(false),
           style: Theme.of(context)
               .textTheme
               .bodySmall!

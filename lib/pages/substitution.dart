@@ -10,6 +10,16 @@ import 'package:intl/intl.dart'; //for time
 import 'package:task_management/main.dart';
 import 'package:task_management/pages/home.dart';
 
+getSubstitution(int i, bool today) async {
+  //get the substitution plan from the server alexinabox.de/api/paid
+  //for now just return a random string
+  if (today) {
+    return "Ausfall heute";
+  } else {
+    return "Ausfall morgen";
+  }
+}
+
 class SubstitutionScreen extends StatefulWidget {
   const SubstitutionScreen({Key? key}) : super(key: key);
   @override
@@ -22,7 +32,7 @@ class _SubstitutionScreenState extends State<SubstitutionScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          getDate(),
+          getDate(false),
           style: Theme.of(context)
               .textTheme
               .bodySmall!
@@ -71,6 +81,8 @@ Stack _buildBody() {
               const SizedBox(
                 height: 15,
               ),
+              _substitutionTable(),
+              //_substitutionPlan(),
               const SizedBox(
                 height: 25,
               ),
@@ -139,6 +151,313 @@ Row _taskHeader() {
             Icons.workspace_premium,
             color: Colors.orange[400],
           ))
+    ],
+  );
+}
+
+Table _substitutionTable() {
+  return Table(
+    defaultColumnWidth: const FlexColumnWidth(1.0),
+    defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+    border: TableBorder.all(
+      color: Colors.grey,
+      width: 1,
+      style: BorderStyle.solid,
+    ),
+    children: [
+      TableRow(
+        children: [
+          const TableCell(
+            child: Text(''),
+          ),
+          TableCell(
+            child: Text(getDate(true)),
+          ),
+          TableCell(
+            child: Text(getDateTomorrow(true)),
+          ),
+        ],
+      ),
+      TableRow(
+        children: [
+          const TableCell(
+            child: Text('1'),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(1, true),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(2, false),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+        ],
+      ),
+      TableRow(
+        children: [
+          const TableCell(
+            child: Text('2'),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(2, true),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(2, false),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+        ],
+      ),
+      //Create 8 more rows
+      TableRow(
+        children: [
+          const TableCell(
+            child: Text('3'),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(3, true),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(3, false),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+        ],
+      ),
+      TableRow(
+        children: [
+          const TableCell(
+            child: Text('4'),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(4, true),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(4, false),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+        ],
+      ),
+      TableRow(
+        children: [
+          const TableCell(
+            child: Text('5'),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(5, true),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(5, false),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+        ],
+      ),
+      TableRow(
+        children: [
+          const TableCell(
+            child: Text('6'),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(6, true),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(6, false),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+        ],
+      ),
+      TableRow(
+        children: [
+          const TableCell(
+            child: Text('7'),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(7, true),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(7, false),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+        ],
+      ),
+      TableRow(
+        children: [
+          const TableCell(
+            child: Text('8'),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(8, true),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(8, false),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+        ],
+      ),
+      TableRow(
+        children: [
+          const TableCell(
+            child: Text('9'),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(9, true),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+          TableCell(
+            child: FutureBuilder(
+              future: getSubstitution(9, false),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return Text(snapshot.data.toString());
+                } else {
+                  return const Text('Loading...');
+                }
+              },
+            ),
+          ),
+        ],
+      ),
     ],
   );
 }

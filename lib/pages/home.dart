@@ -94,12 +94,15 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       //backgroundColor: Color.fromRGBO(48, 49, 53, 1),
       appBar: AppBar(
-        title: Text(
-          getDate(false),
-          style: Theme.of(context)
-              .textTheme
-              .bodySmall!
-              .copyWith(fontWeight: FontWeight.bold),
+        title: Hero(
+          tag: "date",
+          child: Text(
+            getDate(false),
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall!
+                .copyWith(fontWeight: FontWeight.bold),
+          ),
         ),
         elevation: 0,
         actions: [

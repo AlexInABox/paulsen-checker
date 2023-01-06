@@ -31,12 +31,15 @@ class _SubstitutionScreenState extends State<SubstitutionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          getDate(false),
-          style: Theme.of(context)
-              .textTheme
-              .bodySmall!
-              .copyWith(fontWeight: FontWeight.bold),
+        title: Hero(
+          tag: "date",
+          child: Text(
+            getDate(false),
+            style: Theme.of(context)
+                .textTheme
+                .bodySmall!
+                .copyWith(fontWeight: FontWeight.bold),
+          ),
         ),
         elevation: 0,
         actions: [

@@ -96,9 +96,9 @@ class SubstitutionRowContainer extends StatelessWidget {
                     height: isHeader! ? 20 : 40,
                   ),
                   SizedBox(
-                    width: 25,
+                    width: 30,
                     child: Text(
-                      isHeader! ? "" : "($rowIndex) ",
+                      isHeader! ? "" : "($rowIndex)",
                       textAlign: TextAlign.left,
                       overflow: TextOverflow.fade,
                       softWrap: false,

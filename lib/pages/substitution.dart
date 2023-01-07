@@ -85,7 +85,7 @@ Stack _buildBody() {
               const SizedBox(
                 height: 15,
               ),
-              _substitutionTable(),
+              //_substitutionTable(),
               //_substitutionPlan(),
               const SizedBox(
                 height: 25,

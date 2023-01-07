@@ -5,6 +5,7 @@ import 'package:task_management/core/res/color.dart';
 import 'package:task_management/core/routes/routes.dart';
 import 'package:task_management/widgets/circle_gradient_icon.dart';
 import 'package:task_management/widgets/task_group.dart';
+import 'package:task_management/widgets/substitution_row.dart';
 import 'package:intl/intl.dart'; //for time
 //import main.dart for the global variables
 import 'package:task_management/main.dart';
@@ -93,6 +94,73 @@ Stack _buildBody() {
               const SizedBox(
                 height: 10,
               ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 0,
+                isHeader: true,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 1,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 2,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 3,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 4,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 5,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 6,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 7,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 8,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 9,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 10,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 11,
+              ),
+              SubstitutionRowContainer(
+                onTap: () {},
+                color: Colors.indigo,
+                rowIndex: 12,
+              ),
+
               const SizedBox(
                 height: 40,
               ),
@@ -110,7 +178,7 @@ Row _onGoingHeader() {
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
       Text(
-        "Aktuelles: ",
+        "Vertretungsplan: ",
         style: TextStyle(
           color: Colors.blueGrey[900],
           fontWeight: FontWeight.w700,

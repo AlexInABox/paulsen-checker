@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/core/res/color.dart';
+import 'package:paulsen_planer/core/res/color.dart';
 
 class CircleGradientIcon extends StatelessWidget {
   final VoidCallback onTap;

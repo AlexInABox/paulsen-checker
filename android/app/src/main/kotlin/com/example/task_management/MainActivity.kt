@@ -1,4 +1,4 @@
-package com.example.task_management
+package com.example.paulsen_planer
 
 import io.flutter.embedding.android.FlutterActivity
 

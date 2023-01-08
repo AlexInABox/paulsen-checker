@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:task_management/core/res/color.dart';
-import 'package:task_management/models/task.dart';
-import 'package:task_management/widgets/circle_gradient_icon.dart';
-import 'package:task_management/widgets/task.dart';
+import 'package:paulsen_planer/core/res/color.dart';
+import 'package:paulsen_planer/models/task.dart';
+import 'package:paulsen_planer/widgets/circle_gradient_icon.dart';
+import 'package:paulsen_planer/widgets/task.dart';
 
 class TodaysTaskScreen extends StatefulWidget {
   const TodaysTaskScreen({Key? key}) : super(key: key);

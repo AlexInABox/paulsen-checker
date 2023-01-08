@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:sizer/sizer.dart';
-import 'package:task_management/core/res/color.dart';
-import 'package:task_management/core/routes/routes.dart';
-import 'package:task_management/widgets/circle_gradient_icon.dart';
-import 'package:task_management/widgets/task_group.dart';
-import 'package:task_management/widgets/substitution_row.dart';
+import 'package:paulsen_planer/core/res/color.dart';
+import 'package:paulsen_planer/core/routes/routes.dart';
+import 'package:paulsen_planer/widgets/circle_gradient_icon.dart';
+import 'package:paulsen_planer/widgets/task_group.dart';
+import 'package:paulsen_planer/widgets/substitution_row.dart';
 import 'package:intl/intl.dart'; //for time
 //import main.dart for the global variables
-import 'package:task_management/main.dart';
-import 'package:task_management/pages/home.dart';
+import 'package:paulsen_planer/main.dart';
+import 'package:paulsen_planer/pages/home.dart';
 
 getSubstitution(int i, bool today) async {
   //get the substitution plan from the server alexinabox.de/api/paid
@@ -32,15 +32,28 @@ class _SubstitutionScreenState extends State<SubstitutionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Hero(
-          tag: "date",
-          child: Text(
-            getDate(false),
-            style: Theme.of(context)
-                .textTheme
-                .bodySmall!
-                .copyWith(fontWeight: FontWeight.bold),
-          ),
+        automaticallyImplyLeading: false,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            IconButton(
+              onPressed: () => Navigator.pop(context),
+              icon: Icon(Icons.arrow_back, color: Colors.indigo[200]),
+            ),
+            Hero(
+              tag: "date",
+              child: Text(
+                getDate(false),
+                textAlign: TextAlign.left,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodySmall!
+                    .copyWith(fontWeight: FontWeight.bold),
+              ),
+            ),
+            // Your widgets here
+          ],
         ),
         elevation: 0,
         actions: [
@@ -78,22 +91,13 @@ Stack _buildBody() {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(
-                height: 0,
-              ),
               _taskHeader(),
               const SizedBox(
-                height: 15,
+                height: 20,
               ),
               //_substitutionTable(),
               //_substitutionPlan(),
-              const SizedBox(
-                height: 25,
-              ),
-              _onGoingHeader(),
-              const SizedBox(
-                height: 10,
-              ),
+
               SubstitutionRowContainer(
                 onTap: () {},
                 color: Colors.indigo,
@@ -158,6 +162,7 @@ Stack _buildBody() {
               SubstitutionRowContainer(
                 onTap: () {},
                 color: Colors.indigo,
+                isFooter: true,
                 rowIndex: 12,
               ),
 
@@ -205,7 +210,7 @@ Row _taskHeader() {
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
       SelectableText(
-        "PaulsenPlaner",
+        "Vertretungsplan:",
         style: TextStyle(
           color: Colors.blueGrey[900],
           fontWeight: FontWeight.w700,

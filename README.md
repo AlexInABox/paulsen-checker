@@ -11,7 +11,7 @@ git clone https://github.com/AgnelSelvan/Flutter-UI-Template.git
 ```
 
 ```dart
-cd task_management
+cd paulsen_planer
 flutter pub get
 flutter run
 ```

@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(task_management LANGUAGES CXX)
+project(paulsen_planer LANGUAGES CXX)
 
-set(BINARY_NAME "task_management")
+set(BINARY_NAME "paulsen_planer")
 
 cmake_policy(SET CMP0063 NEW)
 

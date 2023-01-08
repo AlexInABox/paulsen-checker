@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/core/res/color.dart';
+import 'package:paulsen_planer/core/res/color.dart';
 
 class TaskGroupContainer extends StatelessWidget {
   final MaterialColor color;
@@ -32,9 +32,9 @@ class TaskGroupContainer extends StatelessWidget {
             color: color[400],
             boxShadow: [
               BoxShadow(
-                color: color.withOpacity(0.4),
+                color: color.withOpacity(0.2),
                 blurRadius: isSmall! ? 5 : 10,
-                spreadRadius: isSmall! ? 1 : 4,
+                spreadRadius: isSmall! ? 1 : 1,
                 offset: isSmall! ? const Offset(2, 4) : const Offset(2, 6),
               )
             ],

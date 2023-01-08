@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/pages/home.dart';
-import 'package:task_management/pages/onboarding.dart';
-import 'package:task_management/pages/today_task.dart';
-import 'package:task_management/pages/substitution.dart';
-import 'package:task_management/pages/mensa.dart';
-import 'package:task_management/pages/homework.dart';
-import 'package:task_management/pages/exams.dart';
+import 'package:paulsen_planer/pages/home.dart';
+import 'package:paulsen_planer/pages/onboarding.dart';
+import 'package:paulsen_planer/pages/today_task.dart';
+import 'package:paulsen_planer/pages/substitution.dart';
+import 'package:paulsen_planer/pages/mensa.dart';
+import 'package:paulsen_planer/pages/homework.dart';
+import 'package:paulsen_planer/pages/exams.dart';
 
 class Routes {
   static const onBoarding = "/";

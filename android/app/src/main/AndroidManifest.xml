@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.task_management">
+    package="com.example.paulsen_planer">
    <application
-        android:label="task_management"
+        android:label="paulsen_planer"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

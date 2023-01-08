@@ -1,6 +1,6 @@
 {
-    "name": "task_management",
-    "short_name": "task_management",
+    "name": "paulsen_planer",
+    "short_name": "paulsen_planer",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

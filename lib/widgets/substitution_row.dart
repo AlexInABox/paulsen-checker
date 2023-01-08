@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:task_management/core/res/color.dart';
-import 'package:task_management/pages/home.dart';
-import 'package:task_management/pages/substitution.dart';
-import 'package:task_management/pages/substitution.dart';
+import 'package:paulsen_planer/core/res/color.dart';
+import 'package:paulsen_planer/pages/home.dart';
+import 'package:paulsen_planer/pages/substitution.dart';
+import 'package:paulsen_planer/pages/substitution.dart';
 
 hourToTime(hour) {
   if (hour == 1) {
@@ -52,6 +52,7 @@ class SubstitutionRowContainer extends StatelessWidget {
   final int rowIndex;
   final VoidCallback? onTap;
   final bool? isHeader;
+  final bool? isFooter;
   //final double iconSize;
   //final IconData icon;
   //final String taskGroup;
@@ -61,6 +62,7 @@ class SubstitutionRowContainer extends StatelessWidget {
     Key? key,
     this.color = Colors.blue,
     this.isHeader = false,
+    this.isFooter = false,
     this.onTap,
     required this.rowIndex,
     //required this.iconSize,
@@ -82,7 +84,12 @@ class SubstitutionRowContainer extends StatelessWidget {
                     topLeft: Radius.circular(10),
                     topRight: Radius.circular(10),
                   )
-                : const BorderRadius.horizontal(),
+                : isFooter!
+                    ? const BorderRadius.only(
+                        bottomLeft: Radius.circular(10),
+                        bottomRight: Radius.circular(10),
+                      )
+                    : const BorderRadius.horizontal(),
           ),
           child: FractionallySizedBox(
             widthFactor: 1.0,
@@ -93,7 +100,7 @@ class SubstitutionRowContainer extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SizedBox(
-                    height: isHeader! ? 20 : 40,
+                    height: isHeader! ? 30 : 40,
                   ),
                   SizedBox(
                     width: 30,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:task_management/core/res/color.dart';
-import 'package:task_management/core/routes/routes.dart';
+import 'package:paulsen_planer/core/res/color.dart';
+import 'package:paulsen_planer/core/routes/routes.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,9 +13,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp(
-        title: 'Task Management',
+        title: 'Paulsen Planer',
         debugShowCheckedModeBanner: false,
         theme: AppColors.getTheme,
         initialRoute: Routes.home,

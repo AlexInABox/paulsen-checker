@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:task_management/core/res/color.dart';
-import 'package:task_management/models/task.dart';
+import 'package:paulsen_planer/core/res/color.dart';
+import 'package:paulsen_planer/models/task.dart';
 
 class TaskWidget extends StatelessWidget {
   final TaskModel taskModel;

@@ -3,49 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:paulsen_planer/core/res/color.dart';
 import 'package:paulsen_planer/pages/home.dart';
-import 'package:paulsen_planer/pages/substitution.dart';
-import 'package:paulsen_planer/pages/substitution.dart';
-
-hourToTime(hour) {
-  if (hour == 1) {
-    return "08:00 - 08:45";
-  }
-  if (hour == 2) {
-    return "08:45 - 09:30";
-  }
-  if (hour == 3) {
-    return "09:55 - 10:40";
-  }
-  if (hour == 4) {
-    return "10:40 - 11:25";
-  }
-  if (hour == 5) {
-    return "11:45 - 12:30";
-  }
-  if (hour == 6) {
-    return "12:30 - 13:15";
-  }
-  if (hour == 7) {
-    return "13:45 - 14:30";
-  }
-  if (hour == 8) {
-    return "14:35 - 15:20";
-  }
-  if (hour == 9) {
-    return "15:20 - 16:05";
-  }
-  if (hour == 10) {
-    return "16:05 - 16:50";
-  }
-  if (hour == 11) {
-    return "16:50 - 17:35";
-  }
-  if (hour == 12) {
-    return "17:35 - 18:20";
-  } else {
-    return "nodata";
-  }
-}
+import 'package:paulsen_planer/logic/logic.dart';
 
 class SubstitutionRowContainer extends StatelessWidget {
   final MaterialColor color;

@@ -6,6 +6,7 @@ import 'package:paulsen_planer/core/routes/routes.dart';
 import 'package:paulsen_planer/widgets/circle_gradient_icon.dart';
 import 'package:paulsen_planer/widgets/task_group.dart';
 import 'package:intl/intl.dart'; //for time
+import 'package:paulsen_planer/logic/logic.dart';
 
 class HomeworkScreen extends StatefulWidget {
   const HomeworkScreen({Key? key}) : super(key: key);

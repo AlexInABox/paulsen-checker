@@ -1,25 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:sizer/sizer.dart';
 import 'package:paulsen_planer/core/res/color.dart';
-import 'package:paulsen_planer/core/routes/routes.dart';
-import 'package:paulsen_planer/widgets/circle_gradient_icon.dart';
 import 'package:paulsen_planer/widgets/task_group.dart';
 import 'package:paulsen_planer/widgets/substitution_row.dart';
-import 'package:intl/intl.dart'; //for time
-//import main.dart for the global variables
-import 'package:paulsen_planer/main.dart';
-import 'package:paulsen_planer/pages/home.dart';
-
-getSubstitution(int i, bool today) async {
-  //get the substitution plan from the server alexinabox.de/api/paid
-  //for now just return a random string
-  if (today) {
-    return "Ausfall heute";
-  } else {
-    return "Ausfall morgen";
-  }
-}
+import 'package:paulsen_planer/logic/logic.dart';
 
 class SubstitutionScreen extends StatefulWidget {
   const SubstitutionScreen({Key? key}) : super(key: key);
@@ -28,6 +13,15 @@ class SubstitutionScreen extends StatefulWidget {
 }
 
 class _SubstitutionScreenState extends State<SubstitutionScreen> {
+  @override
+  void initState() {
+    super.initState();
+    // Reload the widget 2 seconds after launch
+    Future.delayed(const Duration(seconds: 1), () {
+      setState(() {});
+    }).onError((error, stackTrace) => null);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

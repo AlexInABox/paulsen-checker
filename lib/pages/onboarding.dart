@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:paulsen_planer/core/res/app.dart';
 import 'package:paulsen_planer/core/routes/routes.dart';
 import 'package:paulsen_planer/widgets/circle_gradient_icon.dart';
+import 'package:paulsen_planer/logic/logic.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({Key? key}) : super(key: key);

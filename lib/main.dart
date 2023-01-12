@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+
 import 'package:paulsen_planer/core/res/color.dart';
 import 'package:paulsen_planer/core/routes/routes.dart';
 import 'package:flutter/services.dart';
@@ -18,14 +18,12 @@ class MyApp extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
 
-    return Sizer(builder: (context, orientation, deviceType) {
-      return MaterialApp(
-        title: 'Paulsen Planer',
-        debugShowCheckedModeBanner: false,
-        theme: AppColors.getTheme,
-        initialRoute: Routes.home,
-        onGenerateRoute: RouterGenerator.generateRoutes,
-      );
-    });
+    return MaterialApp(
+      title: 'Paulsen Planer',
+      debugShowCheckedModeBanner: false,
+      theme: AppColors.getTheme,
+      initialRoute: Routes.home,
+      onGenerateRoute: RouterGenerator.generateRoutes,
+    );
   }
 }

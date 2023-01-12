@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+
 import 'package:paulsen_planer/core/res/color.dart';
 import 'package:paulsen_planer/models/task.dart';
 
@@ -18,7 +18,7 @@ class TaskWidget extends StatelessWidget {
           Row(
             children: [
               SizedBox(
-                width: 20.w,
+                width: 20,
                 child: Text(
                   "${taskModel.from.hour} PM",
                   style: Theme.of(context)
@@ -28,7 +28,7 @@ class TaskWidget extends StatelessWidget {
                 ),
               ),
               Container(
-                width: 70.w,
+                width: 70,
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                     gradient: AppColors.getDarkLinearGradient(

@@ -66,7 +66,7 @@ class TaskGroupContainer extends StatelessWidget {
                     fit: BoxFit.scaleDown,
                     child: isSmall!
                         ? Text(
-                            " " + taskGroup,
+                            " $taskGroup",
                             textAlign: TextAlign.center,
                             style: const TextStyle(
                               fontFamily: 'System',

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:paulsen_planer/main.dart';
 
 import 'package:paulsen_planer/core/res/color.dart';
 import 'package:paulsen_planer/core/routes/routes.dart';
@@ -128,6 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
+          // ignore: prefer_interpolation_to_compose_strings
           "PaulsenPlaner" + getPremiumStatus(),
           style: TextStyle(
             color: Colors.blueGrey[900],

@@ -1,8 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:paulsen_planer/core/res/color.dart';
-import 'package:paulsen_planer/pages/home.dart';
 import 'package:paulsen_planer/logic/logic.dart';
 
 class SubstitutionRowContainer extends StatelessWidget {

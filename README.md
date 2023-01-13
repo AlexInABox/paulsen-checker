@@ -1,24 +1,16 @@
-# Task Management UI Design
+# paulsen_planer
 
-Task Management Flutter project 🚀.
+A new Flutter project.
 
-### Getting Started
+## Getting Started
 
-###### Download the project from Repo
+This project is a starting point for a Flutter application.
 
-```
-git clone https://github.com/AgnelSelvan/Flutter-UI-Template.git
-```
+A few resources to get you started if this is your first Flutter project:
 
-```dart
-cd paulsen_planer
-flutter pub get
-flutter run
-```
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-### Looks 👀
-
-<img src="outputs/op.gif">
-<img src="outputs/1.png">
-<img src="outputs/2.png">
-<img src="outputs/3.png">
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
+samples, guidance on mobile development, and a full API reference.

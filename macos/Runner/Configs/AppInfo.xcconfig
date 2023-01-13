@@ -8,7 +8,7 @@
 PRODUCT_NAME = paulsen_planer
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.example.taskManagement
+PRODUCT_BUNDLE_IDENTIFIER = com.alexinabox.paulsenPlaner
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2022 com.example. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2023 com.alexinabox. All rights reserved.

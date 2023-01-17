@@ -39,7 +39,13 @@ class _HomeworkScreenState extends State<HomeworkScreen> {
           ),
         ],
       ),
-      extendBody: true,
+      body: _buildBody(),
     );
   }
+}
+
+Stack _buildBody() {
+  return Stack(
+    children: [],
+  );
 }

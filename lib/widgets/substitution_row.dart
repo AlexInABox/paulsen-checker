@@ -73,7 +73,7 @@ class SubstitutionRowContainer extends StatelessWidget {
                   SizedBox(
                     width: 120,
                     child: Text(
-                      isHeader! ? "Zeit" : hourToTime(rowIndex),
+                      isHeader! ? "Zeit" : timeTable[rowIndex],
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
